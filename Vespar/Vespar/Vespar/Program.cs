@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Vocola;
+using System.Speech.Recognition;
 
 namespace Vespar
 {
@@ -11,7 +12,7 @@ namespace Vespar
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World.");
+            
         }
     }
 
