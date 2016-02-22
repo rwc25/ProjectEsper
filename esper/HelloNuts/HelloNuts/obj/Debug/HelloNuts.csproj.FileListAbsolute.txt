@@ -1,6 +1,0 @@
-C:\Users\reMarkable\Desktop\projectS-PER\esper\HelloNuts\HelloNuts\bin\Debug\HelloNuts.exe.config
-C:\Users\reMarkable\Desktop\projectS-PER\esper\HelloNuts\HelloNuts\bin\Debug\HelloNuts.exe
-C:\Users\reMarkable\Desktop\projectS-PER\esper\HelloNuts\HelloNuts\bin\Debug\HelloNuts.pdb
-C:\Users\reMarkable\Desktop\projectS-PER\esper\HelloNuts\HelloNuts\obj\Debug\HelloNuts.csprojResolveAssemblyReference.cache
-C:\Users\reMarkable\Desktop\projectS-PER\esper\HelloNuts\HelloNuts\obj\Debug\HelloNuts.exe
-C:\Users\reMarkable\Desktop\projectS-PER\esper\HelloNuts\HelloNuts\obj\Debug\HelloNuts.pdb
