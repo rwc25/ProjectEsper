@@ -7,4 +7,4 @@ while True:
     text = wordfiletest.readline()
     if 'Firefox' in text: #FireFox will be replaced with the file input
         print text
-os.system('C:\Github\Project_Esper\SikuliX\sikulixrun -r' + wordfiletest + 'C:\Github\Project_Esper\Firefox.sikuli')
+os.system('C:\Github\Project_Esper\SikuliX\sikulixrun -r' + wordfiletest + 'C:\Github\Project_Esper\SikuliScripts\Firefox.sikuli')
