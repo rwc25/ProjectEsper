@@ -1,0 +1,6 @@
+/n *for some reason it doesn't read the first line*
+open window
+close window
+change to woman
+change to man
+testing

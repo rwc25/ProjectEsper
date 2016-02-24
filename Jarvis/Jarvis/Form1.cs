@@ -59,8 +59,9 @@ namespace Jarvis
         */
 
         //Dictionary via a text file
-        StreamReader sR = new StreamReader(@"C:\Users\Batman\Desktop\mydictionary.txt");
-        
+        //StreamReader sR = new StreamReader(@"C:\Users\Batman\Desktop\mydictionary.txt");
+        StreamReader sR = new StreamReader(@"C:\Users\Batman\Documents\Visual Studio 2015\Projects\Jarvis\dictionary.txt");
+
         //start button 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -117,7 +118,8 @@ namespace Jarvis
         }
         
         //Where user input will be written to
-        StreamWriter sW = new StreamWriter(@"C:\Users\Batman\Desktop\projectvespar\writetome.txt", true);
+        //StreamWriter sW = new StreamWriter(@"C:\Users\Batman\Desktop\projectvespar\writetome.txt", true);
+        StreamWriter sW = new StreamWriter(@"C:\Users\Batman\Documents\Visual Studio 2015\Projects\Jarvis\writetome.txt", true);
         private void JRecognize_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             /*
@@ -128,7 +130,7 @@ namespace Jarvis
             //this writes what the user says onto the GUI
             richTextBox1.AppendText(e.Result.Text.ToString());
             //this writes what the users says into a text document
-            sW.Write(e.Result.Text.ToString());            
+            sW.WriteLine(e.Result.Text.ToString());            
             
             /*
             //these are test switch statements to see if the user input 
