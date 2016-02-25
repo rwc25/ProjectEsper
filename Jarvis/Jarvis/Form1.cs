@@ -11,6 +11,7 @@ using System.Speech.Synthesis;
 using System.Speech.Recognition;
 using System.Threading;
 using System.IO;
+using System.Diagnostics;
 
 /*
 Author              Date                Description
@@ -18,7 +19,9 @@ Mark Dela Rosa      1/10/16 - 1/15/16   Pseudocode for start of project
 Mark Dela Rosa      2/10/16             Implementing a feature to input what user says into a string and send that string to a text file.
 Mark Dela Rosa                          Adding a counter to how many times the user says a specific word or phrase.
 Mark Dela Rosa      2/17/16             Removed the switch statements. Added a function to read a text file line by line. (Dictionary)
-                                        Added a function to store user input and write it to a text file. (Data/Database)                               
+                                        Added a function to store user input and write it to a text file. (Data/Database)  
+Mark Dela Rosa      2/24/16             Added System.Diagonistics, added a way to open cmd prompt send a string to write commands 
+                                        while hiding the cmd prompt window.                                                                    
 */
 
 
@@ -61,7 +64,6 @@ namespace Jarvis
         //Dictionary via a text file
         //StreamReader sR = new StreamReader(@"C:\Users\Batman\Desktop\mydictionary.txt");
         StreamReader sR = new StreamReader(@"C:\Users\Batman\Documents\Visual Studio 2015\Projects\Jarvis\dictionary.txt");
-
         //start button 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -88,7 +90,7 @@ namespace Jarvis
             {
                 jList.Add(new string[] { readTextLine });
                 //enables for testing if commands are being read from file
-                testing += readTextLine + "|";
+                testing += readTextLine + " | ";
             }
             */
             
@@ -126,12 +128,20 @@ namespace Jarvis
             This will have to be configured later down the road but right now it does 
             its job of writing the user input into a text document based on the dictionary.
             */
+            
+            //testing
+            
 
             //this writes what the user says onto the GUI
             richTextBox1.AppendText(e.Result.Text.ToString());
             //this writes what the users says into a text document
-            sW.WriteLine(e.Result.Text.ToString());            
+            sW.WriteLine(e.Result.Text.ToString());
+            //testing
+            ExecuteCommand(@"python C:\git\Google Selenium\Vespartest.py");
+            //System.Diagnostics.Process.Start("CMD.exe");
+
             
+
             /*
             //these are test switch statements to see if the user input 
             //could be regulated based on test cases
@@ -169,7 +179,7 @@ namespace Jarvis
                     break;
             }
             */
-            
+
         }
         //Stop button
         private void button3_Click(object sender, EventArgs e)
@@ -179,5 +189,38 @@ namespace Jarvis
             button3.Enabled = false;
             sW.Close();
         }
+
+
+        //it might break
+        static void ExecuteCommand(string command)
+        {
+            int exitCode;
+            ProcessStartInfo processInfo;
+            Process process;
+
+            processInfo = new ProcessStartInfo("cmd.exe", "/c " + command);
+            processInfo.CreateNoWindow = true;
+            processInfo.UseShellExecute = false;
+            // *** Redirect the output ***
+            processInfo.RedirectStandardError = true;
+            processInfo.RedirectStandardOutput = true;
+
+            process = Process.Start(processInfo);
+            process.WaitForExit();
+
+            // *** Read the streams ***
+            // Warning: This approach can lead to deadlocks, see Edit #2
+            string output = process.StandardOutput.ReadToEnd();
+            string error = process.StandardError.ReadToEnd();
+
+            exitCode = process.ExitCode;
+
+            Console.WriteLine("output>>" + (String.IsNullOrEmpty(output) ? "(none)" : output));
+            Console.WriteLine("error>>" + (String.IsNullOrEmpty(error) ? "(none)" : error));
+            Console.WriteLine("ExitCode: " + exitCode.ToString(), "ExecuteCommand");
+            process.Close();
+        }
+
+
     }
 }

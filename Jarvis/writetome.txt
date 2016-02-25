@@ -7,3 +7,10 @@ are
 change to man
 testing
 testing
+testing
+change to woman
+testing
+close window
+testing
+open window
+close window
