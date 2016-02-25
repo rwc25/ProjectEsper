@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 testing
 testing
 change to woman
@@ -14,3 +15,6 @@ close window
 testing
 open window
 close window
+=======
+open FireFox
+>>>>>>> f8a0d72ef134f425929979a91a215abec33238ff

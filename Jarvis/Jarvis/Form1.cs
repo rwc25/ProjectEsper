@@ -63,7 +63,12 @@ namespace Jarvis
 
         //Dictionary via a text file
         //StreamReader sR = new StreamReader(@"C:\Users\Batman\Desktop\mydictionary.txt");
+<<<<<<< HEAD
         StreamReader sR = new StreamReader(@"C:\Users\Batman\Documents\Visual Studio 2015\Projects\Jarvis\dictionary.txt");
+=======
+        StreamReader sR = new StreamReader(@"C:\Github\Project_Esper\Jarvis\dictionary.txt");
+
+>>>>>>> f8a0d72ef134f425929979a91a215abec33238ff
         //start button 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -95,7 +100,7 @@ namespace Jarvis
             */
             
             
-            jList.Add(new string[] { "open window", "close window", "change to woman", "change to man", "testing" });
+            jList.Add(new string[] { "open window", "close window", "change to woman", "change to man", "testing", "open FireFox", "back", "search Google", "search python", "click the first link"});
             Grammar gr = new Grammar(new GrammarBuilder(jList));
             
             while (button2.Enabled == false)
@@ -109,7 +114,7 @@ namespace Jarvis
                     jRecognize.RecognizeAsync(RecognizeMode.Multiple);
                     
                     //testing to see if it reads text file and commands are there
-                    MessageBox.Show("*Test* Commands Available" + "open window | close window | change to woman | change to man | testing");
+                    MessageBox.Show("*Test* Commands Available" + "/n" + "open window | close window | change to woman | change to man | testing | open FireFox | back | search Google | search python | click the first link");
                     
                 }
                 catch
@@ -121,7 +126,7 @@ namespace Jarvis
         
         //Where user input will be written to
         //StreamWriter sW = new StreamWriter(@"C:\Users\Batman\Desktop\projectvespar\writetome.txt", true);
-        StreamWriter sW = new StreamWriter(@"C:\Users\Batman\Documents\Visual Studio 2015\Projects\Jarvis\writetome.txt", true);
+        StreamWriter sW = new StreamWriter(@"C:\Github\Project_Esper\Jarvis\writetome.txt", true);
         private void JRecognize_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             /*
