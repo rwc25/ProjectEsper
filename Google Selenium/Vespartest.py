@@ -1,10 +1,10 @@
 import os.path
 
-path = 'C:\\Github\\Project_Esper\\Jarvis\\writetome.txt'
+path = 'wordfiletest.txt'
 
-wordfiletest = open(path, 'r')
+wordfiletest = open(path, 'r+')
 while True:
-    text = wordfiletest.readline()
+    text = wordfiletest.read()
     if 'Firefox' in text: #FireFox will be replaced with the file input
         print text
-os.system('C:\Github\Project_Esper\SikuliX\sikulixrun -r' + 'C:\Github\Project_Esper\SikuliScripts\\' + text + '.sikuli')
+    os.system('C:\Github\Project_Esper\Sikuli\\runsikulix -r' + 'C:\Github\Project_Esper\SikuliScripts\\' + text + '.sikuli')
