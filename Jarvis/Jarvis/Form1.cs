@@ -54,25 +54,18 @@ namespace Jarvis
             jBuilder.AppendText(richTextBox1.Text);
             jSynth.Speak(jBuilder);
         }
-        /*
-        //testing ideas for a text file 
-        //string[] commands = new string[];
-        //eventually will be replaced with a database
-        //StreamReader sR = new StreamReader(@"C:\Users\Batman\Desktop\projectvespar\test.txt");
-        */
 
-        //Dictionary via a text file
-        //StreamReader sR = new StreamReader(@"C:\Users\Batman\Desktop\mydictionary.txt");        
-
-        StreamReader sR = new StreamReader(@"C:\Github\Project_Esper\Jarvis\dictionary.txt");
+        //Dictionary so the computer understand what the user says 
+        StreamReader sR = new StreamReader(@"C:\git\Jarvis\dictionary.txt");
 
         //start button 
-        private void button2_Click(object sender, EventArgs e)
+         private void button2_Click(object sender, EventArgs e)
         {
 
             button2.Enabled = false;
             button3.Enabled = true;
             Choices jList = new Choices();
+            //This code is to parse through the dictionary file
             string readTextLine = "";
             readTextLine = sR.ReadLine();
             string testing = "";
@@ -123,7 +116,7 @@ namespace Jarvis
         
         //Where user input will be written to
         //StreamWriter sW = new StreamWriter(@"C:\Users\Batman\Desktop\projectvespar\writetome.txt", true);
-        StreamWriter sW = new StreamWriter(@"C:\Github\Project_Esper\Google_Selenium\writetome.txt", true);
+        StreamWriter sW = new StreamWriter(@"C:\git\Google_Selenium\writetome.txt", true);
         private void JRecognize_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             /*
@@ -139,7 +132,10 @@ namespace Jarvis
             //this writes what the users says into a text document
             sW.WriteLine(e.Result.Text.ToString());
             //testing
-            ExecuteCommand(@"python C:\git\Google Selenium\Vespartest.py");
+            ExecuteCommand("python Vespartest.py");
+            //delay of 1 second
+            //Thread.Sleep(1000);
+            
             //System.Diagnostics.Process.Start("CMD.exe");
 
             
@@ -192,35 +188,24 @@ namespace Jarvis
             sW.Close();
         }
 
-
-        //it might break
-        static void ExecuteCommand(string command)
+        public void ExecuteCommand(string Command)
         {
-            int exitCode;
-            ProcessStartInfo processInfo;
-            Process process;
+            Process cmd = new Process();
+            cmd.StartInfo.FileName = "cmd.exe";
+            cmd.StartInfo.RedirectStandardInput = true;
+            cmd.StartInfo.RedirectStandardOutput = true;
+            cmd.StartInfo.CreateNoWindow = true;
+            cmd.StartInfo.UseShellExecute = false;
+            cmd.Start();
 
-            processInfo = new ProcessStartInfo("cmd.exe", "/c " + command);
-            processInfo.CreateNoWindow = true;
-            processInfo.UseShellExecute = false;
-            // *** Redirect the output ***
-            processInfo.RedirectStandardError = true;
-            processInfo.RedirectStandardOutput = true;
+            cmd.StandardInput.WriteLine("python Vespartest.py");
+            cmd.StandardInput.Flush();
+            cmd.StandardInput.Close();
+            cmd.WaitForExit();
+           
+            Console.WriteLine(cmd.StandardOutput.ReadToEnd());
+            
 
-            process = Process.Start(processInfo);
-            process.WaitForExit();
-
-            // *** Read the streams ***
-            // Warning: This approach can lead to deadlocks, see Edit #2
-            string output = process.StandardOutput.ReadToEnd();
-            string error = process.StandardError.ReadToEnd();
-
-            exitCode = process.ExitCode;
-
-            Console.WriteLine("output>>" + (String.IsNullOrEmpty(output) ? "(none)" : output));
-            Console.WriteLine("error>>" + (String.IsNullOrEmpty(error) ? "(none)" : error));
-            Console.WriteLine("ExitCode: " + exitCode.ToString(), "ExecuteCommand");
-            process.Close();
         }
 
 
