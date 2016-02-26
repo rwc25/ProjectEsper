@@ -16,6 +16,6 @@ while 1:
     if not line:
         break
     print line
-    os.system('C:\Github\Project_Esper\Sikuli\\runsikulix -r' + 'C:\Github\Project_Esper\SikuliScripts\\' + line + '.sikuli')
+    os.system('D:\Git\Sikuli\\runsikulix -r' + 'D:\Git\SikuliScripts\\' + line + '.sikuli')
 
 

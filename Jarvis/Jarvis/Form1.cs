@@ -116,7 +116,7 @@ namespace Jarvis
         
         //Where user input will be written to
         //StreamWriter sW = new StreamWriter(@"C:\Users\Batman\Desktop\projectvespar\writetome.txt", true);
-        StreamWriter sW = new StreamWriter(@"D:\Git\Google Selenium\writetome.txt", true);
+        StreamWriter sW = new StreamWriter(@"D:\Git\Selenium\writetome.txt", true);
         private void JRecognize_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             /*
@@ -132,7 +132,7 @@ namespace Jarvis
             //this writes what the users says into a text document
             sW.WriteLine(e.Result.Text.ToString());
             //testing
-            ExecuteCommand("python Vespartest.py");
+            ExecuteCommand();
             //delay of 1 second
             //Thread.Sleep(1000);
             
@@ -188,10 +188,10 @@ namespace Jarvis
             sW.Close();
         }
 
-        public void ExecuteCommand(string Command)
+        public void ExecuteCommand()
         {
             Process process = new Process();
-            process.StartInfo.FileName = @"C:\Users\larry_000\Documents\ConsoleApplication1\ConsoleApplication1\test.bat";
+            process.StartInfo.FileName = @"D:\Git\Selenium\run.bat";
             process.StartInfo.UseShellExecute = false;
             process.StartInfo.RedirectStandardOutput = true;
             process.Start();
