@@ -1,0 +1,47 @@
+Action Words,Command,Sikuli Command,,,
+back,back,click('back button'),,,
+backward,back,click('back button'),,,
+previous,back,click('back button'),,,
+backwards,back,click('back button'),,,
+favorite,bookmark,click('bookmark button'),,,
+favourite,bookmark,click('bookmark button'),,back,click('back button')
+bookmark,bookmark,click('bookmark button'),,bookmark,click('bookmark button')
+click,click,click('file'),,click,click('file')
+close,close,click('X button'),,close,click('X button')
+end,close,click('X button'),,delete,Keys.DELETE
+exit,close,click('X button'),,download,rightclick('file') + click('save image as… or save file as…')
+delete,delete,Keys.DELETE,,find,find('file')
+download,download,rightclick('file') + click('save image as… or save file as…'),,help,open VESPAR help window(coming soon)
+get,download,rightclick('file') + click('save image as… or save file as…'),,next,click('forward button')
+take,download,rightclick('file') + click('save image as… or save file as…'),,open ,doubleclick('file')
+find,find,find('file'),,pause,click('pause button')
+navigate,find,find('file'),,play,click('play button')
+read,find,find('file'),,refresh,click('refresh button')
+hover,find,find('file'),,right click,rightclick('file')
+wave,find,find('file'),,save,click('save button')
+help,help,open VESPAR help window(coming soon),,search box,click('search box')
+forward,next,click('forward button'),,shut down,click('Windows button') + click('power button') + click('shut down button')
+next,next,click('forward button'),,,
+double click,open,doubleclick('file'),,,
+begin,open,doubleclick('file'),,,
+do,open,doubleclick('file'),,,
+launch,open,doubleclick('file'),,,
+open,open,doubleclick('file'),,,
+perform,open,doubleclick('file'),,,
+run,open,doubleclick('file'),,,
+start,open,doubleclick('file'),,,
+surf,open,doubleclick('file'),,,
+pause,pause,click('pause button'),,,
+stop,pause,click('pause button'),,,
+refresh,refresh,click('refresh button'),,,
+obtain,right click,rightclick('file'),,,
+save,save,click('save button'),,,
+browse,search box,click('search box'),,,
+go to,search box,click('search box'),,,
+head to,search box,click('search box'),,,
+lookup,search box,click('search box'),,,
+search,search box,click('search box'),,,
+visit,search box,click('search box'),,,
+power down,shut down,click('Windows button') + click('power button') + click('shut down button'),,,
+shut down,shut down,click('Windows button') + click('power button') + click('shut down button'),,,
+turn off,shut down,click('Windows button') + click('power button') + click('shut down button'),,,
