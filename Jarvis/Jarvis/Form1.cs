@@ -205,11 +205,6 @@ namespace Jarvis
 
             process.WaitForExit();
             process.Close();
-
-            Console.WriteLine("\n\nPress any key to exit.");
-            Console.ReadLine();
-
-
         }
 
 
