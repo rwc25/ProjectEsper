@@ -56,7 +56,7 @@ namespace Jarvis
         }
 
         //Dictionary so the computer understand what the user says 
-        StreamReader sR = new StreamReader(@"C:\git\Jarvis\dictionary.txt");
+        StreamReader sR = new StreamReader(@"D:\Git\Jarvis\Jarvis\dictionary.txt");
 
         //start button 
          private void button2_Click(object sender, EventArgs e)
@@ -116,7 +116,7 @@ namespace Jarvis
         
         //Where user input will be written to
         //StreamWriter sW = new StreamWriter(@"C:\Users\Batman\Desktop\projectvespar\writetome.txt", true);
-        StreamWriter sW = new StreamWriter(@"C:\git\Google_Selenium\writetome.txt", true);
+        StreamWriter sW = new StreamWriter(@"D:\Git\Google Selenium\writetome.txt", true);
         private void JRecognize_SpeechRecognized(object sender, SpeechRecognizedEventArgs e)
         {
             /*
@@ -190,21 +190,25 @@ namespace Jarvis
 
         public void ExecuteCommand(string Command)
         {
-            Process cmd = new Process();
-            cmd.StartInfo.FileName = "cmd.exe";
-            cmd.StartInfo.RedirectStandardInput = true;
-            cmd.StartInfo.RedirectStandardOutput = true;
-            cmd.StartInfo.CreateNoWindow = true;
-            cmd.StartInfo.UseShellExecute = false;
-            cmd.Start();
+            Process process = new Process();
+            process.StartInfo.FileName = @"C:\Users\larry_000\Documents\ConsoleApplication1\ConsoleApplication1\test.bat";
+            process.StartInfo.UseShellExecute = false;
+            process.StartInfo.RedirectStandardOutput = true;
+            process.Start();
 
-            cmd.StandardInput.WriteLine("python Vespartest.py");
-            cmd.StandardInput.Flush();
-            cmd.StandardInput.Close();
-            cmd.WaitForExit();
-           
-            Console.WriteLine(cmd.StandardOutput.ReadToEnd());
-            
+            // Synchronously read the standard output of the spawned process. 
+            StreamReader reader = process.StandardOutput;
+            string output = reader.ReadToEnd();
+
+            // Write the redirected output to this application's window.
+            Console.WriteLine(output);
+
+            process.WaitForExit();
+            process.Close();
+
+            Console.WriteLine("\n\nPress any key to exit.");
+            Console.ReadLine();
+
 
         }
 
