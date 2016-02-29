@@ -1,6 +1,6 @@
 import os.path
 
-path = 'wordfiletest.txt'
+path = 'D:\Git\Selenium\wordfiletest.txt'
 
 wordfiletest = open(path, 'r+')
 while 1:
