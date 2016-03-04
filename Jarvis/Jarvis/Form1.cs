@@ -21,7 +21,10 @@ Mark Dela Rosa                          Adding a counter to how many times the u
 Mark Dela Rosa      2/17/16             Removed the switch statements. Added a function to read a text file line by line. (Dictionary)
                                         Added a function to store user input and write it to a text file. (Data/Database)  
 Mark Dela Rosa      2/24/16             Added System.Diagonistics, added a way to open cmd prompt send a string to write commands 
-                                        while hiding the cmd prompt window.                                                                    
+                                        while hiding the cmd prompt window.         
+Larry Chang         2/25/16             Finishing integration with CMD and now runs all parts of the program together.
+                                        VESPAR Alpha v0.1 is completed.
+                                                                                                 
 */
 
 

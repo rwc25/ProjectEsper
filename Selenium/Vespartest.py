@@ -9,5 +9,6 @@ while 1:
         break
     print line
     os.system('D:\Git\Sikuli\\runsikulix -r' + 'D:\Git\SikuliScripts\\' + line + '.sikuli')
+    break
 
 
