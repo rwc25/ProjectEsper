@@ -93,7 +93,7 @@ namespace Jarvis
             */
             
             
-            jList.Add(new string[] { "open window", "close window", "change to woman", "change to man", "testing", "open FireFox", "back", "search Google", "search python", "click the first link"});
+            jList.Add(new string[] { "open window", "close window", "change to woman", "change to man","Demo Start", "testing", "open FireFox", "back", "search Google", "search python", "click the first link"});
             Grammar gr = new Grammar(new GrammarBuilder(jList));
             
             while (button2.Enabled == false)

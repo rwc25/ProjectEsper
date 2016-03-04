@@ -9,7 +9,7 @@ import os.path
 
 
 driver = webdriver.Firefox()
-driver.get('http://www.google.com')
+driver.get('http://www.facebook.com')
 input = "UW Tacoma"
 sikuli = 'C:\SikuliX\\'
 
